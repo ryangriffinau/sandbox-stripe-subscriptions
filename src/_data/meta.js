@@ -1,6 +1,6 @@
 module.exports = {
   // keep it short! shown in the header
-  title: 'Demo of the Demo',
+  title: 'instrand products',
 
   // these are all optional and add links to the footer
   repo: 'learnwithjason/demo-base',

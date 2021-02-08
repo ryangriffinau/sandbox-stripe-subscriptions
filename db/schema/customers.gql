@@ -1,0 +1,11 @@
+type User {
+  customerID: ID!
+  netlifyID: ID!
+  stripeID: ID!
+}
+
+# look up user by either netlify or stripe ID's
+type Query {
+  getUserByNetlifyID(netlifyID: ID!): User!
+  getUserByStripeID(stripeID: ID!): User!
+}
