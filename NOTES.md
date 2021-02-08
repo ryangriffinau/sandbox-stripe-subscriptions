@@ -1,12 +1,20 @@
 
 https://www.netlify.com/blog/2020/07/13/manage-subscriptions-and-protect-content-with-stripe/
 
+ryan@instrand.co
+testing
+
 ## Netlify
+
 <!-- link local site to Netlify site -->
 ntl link
 
 <!-- launch a local dev server to review changes on  -->
 ntl dev
+
+When want to test out live updates:
+1. commit git changes -> git add . -> git commit -m "msg"
+2. npm run build
 
 ## Fauna
 ### Set up
@@ -36,8 +44,10 @@ Premuim:
 - annual: price_1IIg1VCjVSJMhXRIaybpJY38
 
 2. Add 2 new environment variables in Netlify:
-STRIPE_DEFAULT_PRICE_PLAN, which contains the API ID for the Free plan
-STRIPE_SECRET_KEY, which contains Stripe secret key
+- STRIPE_DEFAULT_PRICE_PLAN, which contains the API ID for the Free plan
+- STRIPE_SECRET_KEY, which contains Stripe secret key
+3. npm install stripe
+4. create handler to auto create new customer with each sign up
 
 ## Test Environ
 
