@@ -37,6 +37,7 @@ exports.handler = async (event) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
+        // how able to control user roles
       app_metadata: {
         roles: ['free'],
       },
