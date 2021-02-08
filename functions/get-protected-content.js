@@ -8,7 +8,7 @@ const content = {
       credit: 'Jacob Van Blarcom',
       creditLink: 'https://unsplash.com/photos/lkzjENdWgd8',
       message: 'To view this content, you need to create an account!',
-      allowedRoles: ['free', 'pro', 'premium'],
+      allowedRoles: ['free', 'pro', 'premium']
     },
     pro: {
       src:
@@ -18,7 +18,7 @@ const content = {
       creditLink: 'https://unsplash.com/photos/yxmNWxi3wCo',
       message:
         'This is protected content! It’s only available if you have a pro plan or higher.',
-      allowedRoles: ['pro', 'premium'],
+      allowedRoles: ['pro', 'premium']
     },
     premium: {
       src:
@@ -28,8 +28,8 @@ const content = {
       creditLink: 'https://unsplash.com/photos/cX-KEISwDIw',
       message:
         'This is protected content! It’s only available if you have the premium plan.',
-      allowedRoles: ['premium'],
-    },
+      allowedRoles: ['premium']
+    }
   };
   
 //  protected content handler - returns content based on 'type'
@@ -48,7 +48,7 @@ exports.handler = async (event, context) => {
             alt: 'corgi in a crossed circle with the text “subscription required”',
             credit: 'Jason Lengstorf',
             creditLink: 'https://dribbble.com/jlengstorf',
-            message: `This content requires a ${type} subscription.`,
+            message: `This content requires a ${type} subscription.`
           }),
         };
       }
