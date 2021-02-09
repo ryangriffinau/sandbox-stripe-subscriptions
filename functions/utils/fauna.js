@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
 // utility function that accepts a gql query & variable object then sends
 // them to Fauna's gql endpoint as required
