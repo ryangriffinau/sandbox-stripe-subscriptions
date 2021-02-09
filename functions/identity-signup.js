@@ -1,8 +1,8 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-import { faunaFetch } from './utils/fauna';
+const { faunaFetch } = require('./utils/fauna');
 
 // will be called whenver someone signs up to the site
-console.log('prefunction: identity')
+
 exports.handler = async (event) => {
   const { user } = JSON.parse(event.body);
   console.log('in Handler');
@@ -14,7 +14,7 @@ exports.handler = async (event) => {
     customer: customer.id,
     items: [{ price: process.env.STRIPE_DEFAULT_PRICE_PLAN }],
   });
-
+  console.log(`stripeID: ${customer.id}`);
   // store the Netlify and Stripe IDs in Fauna
   await faunaFetch({
     query: `
@@ -32,7 +32,7 @@ exports.handler = async (event) => {
       stripeID: customer.id,
     },
   });
-
+  console.log('passed fauna');
   return {
     statusCode: 200,
     body: JSON.stringify({
