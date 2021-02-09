@@ -1,9 +1,8 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 import { faunaFetch } from './utils/fauna';
-import { v4 as uuidv4 } from 'uuid';
 
 // will be called whenver someone signs up to the site
-
+console.log('prefunction: identity')
 exports.handler = async (event) => {
   const { user } = JSON.parse(event.body);
   console.log('in Handler');
@@ -28,7 +27,7 @@ exports.handler = async (event) => {
       }
     `,
     variables: {
-      customerID: uuidv4(),
+      customerID: 1,
       netlifyID: user.id,
       stripeID: customer.id,
     },
