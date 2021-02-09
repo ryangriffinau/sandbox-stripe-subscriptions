@@ -7,9 +7,9 @@ import { v4 as uuidv4 } from 'uuid';
 exports.handler = async (event) => {
   const { user } = JSON.parse(event.body);
   console.log('in Handler');
+  console.log(user);
   // create a new customer in Stripe using user info
   const customer = await stripe.customers.create({ email: user.email });
-
   // subscribe the new customer to the free plan
   await stripe.subscriptions.create({
     customer: customer.id,
