@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 exports.handler = async (event) => {
   const { user } = JSON.parse(event.body);
-
+  console.log('in Handler');
   // create a new customer in Stripe using user info
   const customer = await stripe.customers.create({ email: user.email });
 
@@ -28,7 +28,7 @@ exports.handler = async (event) => {
       }
     `,
     variables: {
-        customerID: uuidv4(),
+      customerID: uuidv4(),
       netlifyID: user.id,
       stripeID: customer.id,
     },
